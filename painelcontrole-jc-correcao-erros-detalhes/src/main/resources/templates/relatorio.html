@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório</title>
+  <link rel="stylesheet" href="main.css" />
+  <style>
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@page {
+  margin: 0;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+}
+
+main{
+  padding: 20px;
+  width: 760px;
+}
+
+.header{
+  border: 1px solid black;
+  height: 80px;
+  box-shadow: 5px 5px 0 0 black; /* Set the box shadow */
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo{
+  padding: 10px;
+  width: 20%;
+  float: left;
+}
+
+.logo > img{
+  height: 60px;
+}
+
+.title{
+  text-align: center;
+  width: 60%;
+  float: left;
+}
+
+.main_title{
+  padding: 10px;
+  margin: 0;
+}
+
+.subtitle{
+  padding: 0;
+  margin: 0;
+}
+
+.details{
+  padding: 12px;
+}
+
+.details > p{
+  padding: 0;
+  margin: 0;
+}
+
+.resumo_empresa{
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.resumo_header{
+  background-color: #ffcc99;
+  text-align: center;
+  padding: 5px;  
+  font-size: 1em;
+  font-weight: bold;
+}
+
+table{
+  border: 0.5px solid black;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead{
+  font-weight: bold;
+  border: 0.5px solid black;
+}
+
+.acessor_name{
+  text-align: center;
+  background-color: #c0c0c0;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+thead > :nth-child(1) > th{
+  background-color: #c0c0c0;
+  padding: 5px;
+}
+
+th {
+  border: 0.5px solid black;
+  vertical-align: center;
+  padding: 2px;
+  font-size: 0.6em;
+}
+
+td {
+  padding: 4px;
+}
+
+tbody > tr {
+  border-bottom: 0.5px solid black;
+}
+
+tbody > :nth-child(1) > :nth-child(1){
+  vertical-align: super;
+  text-align: center;
+}
+
+tbody {
+  font-size: 0.5em;
+  text-align: center;
+}
+
+
+.total_empresa{
+  font-weight: bold;
+  font-size: 0.6em;
+  margin-top: 8px;
+  padding-left: 30px;
+  padding-right: 135px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.total_valor_e_unidades{
+  float: left;
+  width: 60%;
+  margin-right: 82px;
+}
+
+.linha_total{
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.linha_total > p{
+  margin: 4px;
+  padding: 0;
+  float: left;
+}
+
+.linha_total :nth-child(1){
+  width: 80%;
+}
+
+.linha_total :nth-child(2){
+  text-align: right;
+}
+
+.total_final{
+  background-color: #c0c0c0;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+.total_final{
+  margin-bottom: 20px;
+}
+
+.total_final > div{
+  display: inline-block;
+  padding: 5px;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.total_final > :nth-child(1){
+  width: 60%;
+}
+
+.total_final > .empresa > :nth-child(1){
+  float: left;
+  width: 70%;
+}
+.total_final > .empresa > :nth-child(2){
+  float: left;
+  width: 30%;
+  text-align: right;
+}
+
+.total_final > .unidades{
+  width: 35%;
+}
+
+.total_final > .unidades > div{
+  float: left;
+}
+
+.total_final > .unidades > :nth-child(1){
+  width: 50%;
+}
+
+.total_por_empreendimento{
+  margin-top: 10px;
+}
+
+.empreendimento{
+  margin-bottom: 5px;
+}
+
+.header_empreendimento{
+  background-color: #ffcc99;
+  padding: 3px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.row_empreendimento{
+  padding: 2px;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.6em;
+}
+
+.row_empreendimento > :nth-child(1){
+  float: left;
+  width: 100px;
+}
+
+.row_empreendimento > :nth-child(2){
+  float: left;
+  text-align: right;
+  width: 345px;
+}
+
+.row_empreendimento > :nth-child(3){
+  float: left;
+  text-align: right;
+  width: 150px;
+}
+
+.total_total{
+  margin-top: 10px;
+  background-color: #c0c0c0;
+}
+
+.total_total > .row_empreendimento{
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+.distratos{
+  margin-top: 15px;
+}
+
+.header_distratos{
+  width: 100%;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+
+.header_distratos > :nth-child(1){
+  float: left;
+  width: 40%;
+}
+.header_distratos > :nth-child(2){
+  float: left;
+  width: 15%;
+}
+.header_distratos > :nth-child(3){
+  float: left;
+  width: 15%;
+}
+.header_distratos > :nth-child(4){
+  float: left;
+  text-align: center;
+  width: 15%;
+}
+
+.row_distrato{
+  font-size: 0.6em;
+  width: 100%;
+  overflow: hidden;
+}
+
+.row_distrato > div{
+  float: left;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.red_code{
+  color: red;
+}
+
+.row_distrato > :nth-child(1){
+  width: 40%;
+}
+.row_distrato > :nth-child(2){
+  width: 15%;
+}
+.row_distrato > :nth-child(3){
+  width: 15%;
+}
+.row_distrato > :nth-child(4){
+  text-align: center;
+  width: 15%;
+}
+
+.distratos_resumo{
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.unidades_distratadas{
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.6em;
+}
+
+.unidades_distratadas > :nth-child(1){
+  float: left;
+  width: 30%;
+}
+.unidades_distratadas > :nth-child(2){
+  float: left;
+  width: 50%;
+}
+
+.vgv_liquido{
+  background-color: #ff6600;
+  font-size: 1em;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.vgv_liquido > :nth-child(1){
+  float: left;
+  width: 435px;
+}
+.vgv_liquido > :nth-child(2){
+  float: left;
+  width: 200px;
+}
+
+.header_participacoes{
+  padding: 3px;
+  text-align: center;
+  font-size: 1em;
+  background-color: #e5e5e5;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.th_p{
+  background-color: #ff6600!important;
+  font-size: 0.8em;
+}
+
+.tr_p > td {
+  font-size: 1.5em!important;
+  border-right: 0.5px solid black;
+}
+
+.tbody_p > :last-child {
+  background-color: black;
+  color: white;
+}
+
+.tbody_p > :last-child > td{
+  border-right: 0.5px solid white;
+}
+
+.div_acessor_e_table{
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="header">
+      <div class="logo">
+        <img
+          src="data:image/png;base64,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"
+          alt="Logo" />
+      </div>
+      <div class="title">
+        <h3 class="main_title">CONTROLE DE PRODUÇÃO DE CORRETORES</h3>
+        <h4 class="subtitle" th:text="${periodo}">FEVEREIRO 2024</h4>
+      </div>
+      
+      <div class="details">
+        <p th:text="'Data: ' + ${dataAtual}">Data: 01/03/2024</p>
+        <p th:text="'Hora: ' + ${horaAtual}">Hora: 12:05:40</p>
+      </div>
+      
+    </div>
+    <div class="resumo_empresa">
+    <div th:each="re : ${vendasEmpresa}">
+      <div class="resumo_header" th:text="${re.empresaMegaDTO.razaoSocial}">JOSÉ CELSO GONTIJO ENGENHARIA S.A - ADM</div>
+      <div th:each="rv : ${re.reportVendas}" class="div_acessor_e_table">
+        <div class="acessor_name" th:text="${rv.acessor.nome}"></div>
+        <table class="table_empresa">
+          <thead>
+            <tr>
+              <th>ASSESSOR</th>
+              <th>DATA</th>
+              <th>UN</th>
+              <th>EMPREENDIMENTO</th>
+              <th>VL VENDA</th>
+              <th>VL SINAL</th>
+              <th>VL CONTATO</th>
+              <th>OBSERVACAO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="venda : ${rv.vendas}">
+              <td th:text="${venda.acessor.nome}"></td>
+              <td th:text="${venda.dataVenda}"></td>
+              <td th:text="${venda.unidade}"></td>
+              <td th:text="${venda.empreendimento}"></td>
+              <td th:text="${#numbers.formatCurrency(venda.valorVenda)}"></td>
+              <td th:text="${#numbers.formatCurrency(venda.valorSinal)}"></td>
+              <td th:text="${#numbers.formatCurrency(venda.valorContrato)}"></td>
+              <td th:text="${venda.observacao}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="total_empresa">
+        <div class="total_valor_e_unidades">
+          <div class="linha_total">
+            <p>Valor Total</p>
+            <p>2.390.000,00</p>
+          </div>
+          <div class="linha_total">
+            <p>Total de Unidades</p>
+            <p>6</p>
+          </div>
+        </div>
+        <div class="total_contratos">2.390.000,00</div>
+      </div>
+      <div class="total_final">
+        <div class="empresa">
+          <div>Total da Empresa</div>
+          <div>2.390.000,00</div>
+        </div>
+        <div class="unidades">
+          <div>Total de Unidades</div>
+          <div>6</div>
+        </div>
+      </div>
+    </div>
+      <div class="total_por_empreendimento" th:each="resumo : ${resumoEmpreendimentos}">
+        <div class="empreendimento">
+          <div class="header_empreendimento" th:text="${resumo.empreendimento}">
+            ED. ION - 100%JC
+          </div>
+          <div class="row_empreendimento">
+            <div>VGV</div>
+            <div th:text="${#numbers.formatCurrency(resumo.somaValorVenda)}">2.000.000,00</div>
+            <div th:text="${#numbers.formatCurrency(resumo.vgvLiquido)}">2.000.000,00</div>
+          </div>
+          <div class="row_empreendimento">
+            <div>Unidades Vendidas</div>
+            <div th:text="${resumo.numeroDeUnidades}">6</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="total_total">
+        <div class="row_empreendimento">
+          <div>VGV</div>
+          <div th:text="${#numbers.formatCurrency(dadosVenda.somaValorVenda)}">2.000.000,00</div>
+          <div  th:text="${#numbers.formatCurrency(dadosVenda.somaValorContrato)}">2.000.000,00</div>
+        </div>
+        <div class="row_empreendimento">
+          <div>Unidades Vendidas</div>
+          <div th:text="${dadosVenda.numeroDeUnidades}">6</div>
+        </div>
+      </div>
+      <div class="distratos">
+        <div class="header_empreendimento">
+          Distratos
+        </div>
+        <div class="header_distratos">
+          <div>Empreendimento</div>
+          <div>Bloco</div>
+          <div>Unidade</div>
+          <div>Valor</div>
+        </div>
+        <div class="row_distrato" th:each="detalhe : ${vendasDistratadas}">
+          <div  th:text="${detalhe.empreendimento}">HOTEL DAS NAÇÕES - BEM DE TERCEIROS 100% JCG</div>
+          <div  th:text="${detalhe.bloco}">10º PAVIMENTO</div>
+          <div th:text="${detalhe.unidade}">1015 <span class="red_code">(JCG/ADM-08/2019)</span></div>
+          <div th:text="${#numbers.formatCurrency(detalhe.valorVenda)}"> 245.000,00</div>
+        </div>
+      </div>
+      <div class="distratos_resumo">
+        <div class="unidades_distratadas">
+          <div>UNIDADES DISTRATADAS</div>
+          <div th:text="${dadosVendaDistratadas.numeroDeUnidades}">2</div>
+          <div  th:text="${#numbers.formatCurrency(dadosVendaDistratadas.somaValorVenda)}">490.000,00</div>
+        </div>
+        <div class="vgv_liquido">
+          <div>VGV LÍQUIDO</div>
+          <div th:text="${#numbers.formatCurrency(vgvLiquido)}">2.506.796,36</div>
+          <div>2.506.796,36</div>
+        </div>
+      </div>
+
+      <div class="participacoes">
+        <div class="header_participacoes">PARTICIPAÇÕES JCGONTIJO</div>
+        <table>
+          <thead>
+            <th class="th_p">EMPREENDIMENTO</th>
+            <th class="th_p">VGV LÍQUIDO</th>
+            <th class="th_p">%JCG</th>
+            <th class="th_p">VALOR JCG R$</th>
+          </thead>
+          <tbody class="tbody_p">
+            <tr class="tr_p">
+              <td>ADVANCE - 100%JCG</td>
+              <td>269.000,00</td>
+              <td>100,00</td>
+              <td>269.000,00</td>
+            </tr>
+            <tr class="tr_p">
+              <td>ADVANCE - 100%JCG</td>
+              <td>269.000,00</td>
+              <td>100,00</td>
+              <td>269.000,00</td>
+            </tr>
+            <tr class="tr_p">
+              <td>TOTAL</td>
+              <td colspan="2">269.000,00</td>
+              <td>269.000,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+@media print {
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  @page {
+    margin: 0;
+  }
+  
+  body{
+    display: flex;
+    justify-content: center;
+  }
+  
+  main{
+    padding: 20px;
+    width: 760px;
+  }
+  
+  .header{
+    border: 1px solid black;
+    height: 80px;
+    box-shadow: 5px 5px 0 0 black; /* Set the box shadow */
+    display: flex;
+    flex-direction: row;
+  justify-content: space-between;
+  }
+  
+  .logo{
+    padding: 10px;
+    width: 150px;
+  }
+  
+  .logo > img{
+    height: 60px;
+  }
+  
+  .title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .main_title{
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .subtitle{
+    padding: 0;
+    margin: 0;
+  }
+  
+  .details{
+    padding: 12px;
+  }
+  
+  .details > p{
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resumo_empresa{
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .resumo_header{
+    background-color: #ffcc99;
+    text-align: center;
+    padding: 5px;  
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  table{
+    border: 0.5px solid black;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead{
+    font-weight: bold;
+    border: 0.5px solid black;
+  }
+  
+  thead > :nth-child(1) > th{
+    background-color: #c0c0c0;
+    padding: 5px;
+  }
+  
+  th {
+    border: 0.5px solid black;
+    vertical-align: center;
+    padding: 2px;
+    font-size: 0.6em;
+  }
+  
+  td {
+    padding: 4px;
+  }
+  
+  tbody > tr {
+    border-bottom: 0.5px solid black;
+  }
+  
+  tbody > :nth-child(1) > :nth-child(1){
+    vertical-align: super;
+    text-align: center;
+  }
+  
+  tbody {
+    font-size: 0.5em;
+    text-align: center;
+  }
+  
+  
+  .total_empresa{
+    font-weight: bold;
+    font-size: 0.6em;
+    margin-top: 8px;
+    padding-left: 30px;
+    padding-right: 135px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .linha_total{
+    border-bottom: 1px solid black;
+    width: 420px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .linha_total > p{
+    margin: 4px;
+    padding: 0;
+  }
+  
+  .total_final{
+    background-color: #c0c0c0;
+    border: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .total_final > div{
+    display: flex;
+    padding: 5px;
+    font-size: 0.6em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .total_final > :nth-child(1){
+    width: 440px;
+  }
+  
+  .total_final > :nth-child(2){
+    width: 250px;
+  }
+  
+  .total_por_empreendimento{
+    margin-top: 10px;
+  }
+  
+  .empreendimento{
+    margin-bottom: 5px;
+  }
+  
+  .header_empreendimento{
+    background-color: #ffcc99;
+    padding: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  
+  .row_empreendimento{
+    padding: 2px;
+    display: flex;
+    font-size: 0.6em;
+  }
+  
+  .row_empreendimento > :nth-child(1){
+    width: 100px;
+  }
+  
+  .row_empreendimento > :nth-child(2){
+    text-align: right;
+    width: 345px;
+  }
+  
+  .row_empreendimento > :nth-child(3){
+    text-align: right;
+    width: 150px;
+  }
+  
+  .total_total{
+    margin-top: 10px;
+    background-color: #c0c0c0;
+  }
+  
+  .total_total > .row_empreendimento{
+    font-weight: bold;
+    font-size: 0.7em;
+  }
+  
+  .distratos{
+    margin-top: 15px;
+  }
+  
+  .header_distratos{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.7em;
+    font-weight: bold;
+  }
+  
+  
+  .header_distratos > :nth-child(1){
+    width: 300px;
+  }
+  .header_distratos > :nth-child(2){
+    width: 200px;
+  }
+  .header_distratos > :nth-child(3){
+    width: 200px;
+  }
+  .header_distratos > :nth-child(4){
+    text-align: center;
+    width: 200px;
+  }
+  
+  .row_distrato{
+    font-size: 0.6em;
+    display: flex;
+  }
+  
+  .row_distrato > div{
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  
+  .red_code{
+    color: red;
+  }
+  
+  .row_distrato > :nth-child(1){
+    width: 300px;
+  }
+  .row_distrato > :nth-child(2){
+    width: 200px;
+  }
+  .row_distrato > :nth-child(3){
+    width: 200px;
+  }
+  .row_distrato > :nth-child(4){
+    text-align: center;
+    width: 200px;
+  }
+  
+  .distratos_resumo{
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .unidades_distratadas{
+    display: flex;
+    font-size: 0.6em;
+  }
+  
+  .unidades_distratadas > :nth-child(1){
+    width: 335px;
+  }
+  .unidades_distratadas > :nth-child(2){
+    width: 300px;
+  }
+  
+  .vgv_liquido{
+    background-color: #ff6600;
+    font-size: 1em;
+    color: white;
+    display: flex;
+    padding: 2px;
+  }
+  
+  .vgv_liquido > :nth-child(1){
+    width: 435px;
+  }
+  .vgv_liquido > :nth-child(2){
+    width: 200px;
+  }
+  
+  .header_participacoes{
+    padding: 3px;
+    text-align: center;
+    font-size: 1em;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .th_p{
+    background-color: #ff6600!important;
+    font-size: 0.8em;
+  }
+  
+  .tr_p > td {
+    font-size: 1.5em!important;
+    border-right: 0.5px solid black;
+  }
+  
+  .tbody_p > :last-child {
+    background-color: black;
+    color: white;
+  }
+  
+  .tbody_p > :last-child > td{
+    border-right: 0.5px solid white;
+  }

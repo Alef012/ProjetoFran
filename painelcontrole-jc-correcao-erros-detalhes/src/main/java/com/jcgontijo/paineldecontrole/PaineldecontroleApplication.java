@@ -39,14 +39,15 @@ public class PaineldecontroleApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		if (usuarioService.buscarTodos().isEmpty()) {
-
+           
 			Usuario usuario = Usuario.builder()
-					.nome(usuarioNome)
-					.email(usuarioEmail)
 					.senha(usuarioSenha)
 					.perfil(Perfil.ADMINISTRADOR)
 					.ativo(true)
 					.build();
+					
+			usuario.setNome(usuarioNome);
+			usuario.setEmail(usuarioEmail);
 
 			usuarioService.cadastrar(usuario);
 		}

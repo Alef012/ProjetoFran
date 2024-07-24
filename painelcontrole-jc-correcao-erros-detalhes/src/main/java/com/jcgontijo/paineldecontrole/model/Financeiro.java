@@ -9,10 +9,11 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "financeiro")
 @Getter
 @Setter
 @ToString
 @Builder
-public class Cliente extends Pessoa{
+public class Financeiro extends Pessoa{
+    
 }

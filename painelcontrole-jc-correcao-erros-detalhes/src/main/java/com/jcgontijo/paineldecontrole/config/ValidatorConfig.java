@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.jcgontijo.paineldecontrole.services.UsuarioService;
-import com.jcgontijo.paineldecontrole.validators.UsuarioValidator;
+import com.jcgontijo.paineldecontrole.service.UsuarioService;
+import com.jcgontijo.paineldecontrole.validator.UsuarioValidator;
 @Configuration
 public class ValidatorConfig {
 

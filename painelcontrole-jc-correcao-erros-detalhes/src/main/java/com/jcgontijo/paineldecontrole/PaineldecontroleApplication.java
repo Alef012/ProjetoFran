@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.jcgontijo.paineldecontrole.model.Perfil;
 import com.jcgontijo.paineldecontrole.model.Usuario;
-import com.jcgontijo.paineldecontrole.services.UsuarioService;
+import com.jcgontijo.paineldecontrole.service.UsuarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -48,7 +48,9 @@ public class PaineldecontroleApplication implements CommandLineRunner {
 					
 			usuario.setNome(usuarioNome);
 			usuario.setEmail(usuarioEmail);
-
+			usuario.setCpf(" ");
+			usuario.setTelefone(" ");
+			
 			usuarioService.cadastrar(usuario);
 		}
 

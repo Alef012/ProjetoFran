@@ -2,7 +2,6 @@ package com.jcgontijo.paineldecontrole.controller;
 
 import java.security.Principal;
 
-import com.jcgontijo.paineldecontrole.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jcgontijo.paineldecontrole.model.Usuario;
 import com.jcgontijo.paineldecontrole.repository.UsuarioRepository;
-import com.jcgontijo.paineldecontrole.utils.AlterarSenha;
-import com.jcgontijo.paineldecontrole.utils.SenhaUtils;
+import com.jcgontijo.paineldecontrole.service.UsuarioService;
+import com.jcgontijo.paineldecontrole.util.AlterarSenha;
+import com.jcgontijo.paineldecontrole.util.SenhaUtils;
 
 @Controller
 public class LoginController {

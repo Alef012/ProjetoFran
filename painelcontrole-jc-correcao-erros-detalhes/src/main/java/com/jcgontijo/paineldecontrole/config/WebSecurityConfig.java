@@ -9,8 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.jcgontijo.paineldecontrole.model.Perfil;
-import com.jcgontijo.paineldecontrole.services.UserDetailsServiceImpl;
+import com.jcgontijo.paineldecontrole.service.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity

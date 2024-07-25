@@ -1,4 +1,4 @@
-package com.jcgontijo.paineldecontrole.services;
+package com.jcgontijo.paineldecontrole.service;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 import com.jcgontijo.paineldecontrole.model.Usuario;
 import com.jcgontijo.paineldecontrole.repository.UsuarioRepository;
-import com.jcgontijo.paineldecontrole.utils.SenhaUtils;
+import com.jcgontijo.paineldecontrole.util.SenhaUtils;
 
 @Service
 public class UsuarioService {

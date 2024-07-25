@@ -1,9 +1,7 @@
 package com.jcgontijo.paineldecontrole.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,16 +11,22 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "tipo_empreendimento")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Builder
-public class TipoEmpreendimento extends Entidade{
+public class PessoaJuridica extends Entidade{
+    
+    @Column(name ="razao_social")
+    private String razaoSocial;
 
-    @Column(nullable = false, name ="nome")
-    private String nome;
+    @Column(name="nomeFantasia")
+    private String nomeFantasia;
+
+    @Column(name="cnpj")
+    private String cnpj;
+
 
 }

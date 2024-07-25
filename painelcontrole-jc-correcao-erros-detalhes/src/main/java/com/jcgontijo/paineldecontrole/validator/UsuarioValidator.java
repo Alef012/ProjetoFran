@@ -1,4 +1,4 @@
-package com.jcgontijo.paineldecontrole.validators;
+package com.jcgontijo.paineldecontrole.validator;
 
 import java.util.regex.Pattern;
 
@@ -7,7 +7,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.jcgontijo.paineldecontrole.model.Usuario;
-import com.jcgontijo.paineldecontrole.services.UsuarioService;
+import com.jcgontijo.paineldecontrole.service.UsuarioService;
 
 public class UsuarioValidator implements Validator {
 

@@ -1,7 +1,6 @@
 package com.jcgontijo.paineldecontrole.model;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Builder;
@@ -17,6 +16,5 @@ import lombok.ToString;
 @Builder
 public class Gerente extends Pessoa{
 
-    @OneToOne(mappedBy = "gerente")
-    private Construtora construtora;
+   
 }

@@ -17,7 +17,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class Pessoa extends Entidade{
+public class Pessoa extends Entidade{
     
     @Column(nullable = false, name ="nome")
     private String nome;

@@ -22,8 +22,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jcgontijo.paineldecontrole.model.Perfil;
 import com.jcgontijo.paineldecontrole.model.Usuario;
-import com.jcgontijo.paineldecontrole.services.UsuarioService;
-import com.jcgontijo.paineldecontrole.validators.UsuarioValidator;
+import com.jcgontijo.paineldecontrole.service.UsuarioService;
+import com.jcgontijo.paineldecontrole.validator.UsuarioValidator;
 
 @Controller
 @RequestMapping("/usuarios")

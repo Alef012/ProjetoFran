@@ -1,4 +1,4 @@
-package com.jcgontijo.paineldecontrole.utils;
+package com.jcgontijo.paineldecontrole.util;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

@@ -1,16 +1,14 @@
-# Use a imagem oficial do PostgreSQL do Docker Hub
-FROM postgres:latest
+FROM maven:3.8.2-jdk-11
 
-# Defina variáveis de ambiente para configuração do PostgreSQL
-ENV POSTGRES_USER=posgres
-ENV POSTGRES_PASSWORD=postgres
-ENV POSTGRES_DB=db
+WORKDIR /home
 
-# Copie arquivos SQL ou scripts de inicialização, se necessário
-# COPY path/to/your-init.sql /docker-entrypoint-initdb.d/
+COPY . .
 
-# Exponha a porta padrão do PostgreSQL
-EXPOSE 5432
+RUN mvn clean package -DskipTests
 
-# Comando para iniciar o PostgreSQL (já configurado pela imagem base)
-CMD ["postgres"]
+COPY ./entrypoint.sh ./entrypoint.sh
+
+RUN chmod +x ./entrypoint.sh
+
+CMD bash ./entrypoint.sh
+

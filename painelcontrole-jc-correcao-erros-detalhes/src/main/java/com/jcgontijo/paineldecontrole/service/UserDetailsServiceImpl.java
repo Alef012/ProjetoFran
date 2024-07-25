@@ -1,4 +1,4 @@
-package com.jcgontijo.paineldecontrole.services;
+package com.jcgontijo.paineldecontrole.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -2,7 +2,6 @@ package com.jcgontijo.paineldecontrole.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -41,11 +40,5 @@ public class Endereco extends Entidade{
 
     @Column(name = "complemento")
     String complemento;
-
-    @OneToOne(mappedBy = "endereco")
-    private Pessoa pessoa;
-
-    @OneToOne(mappedBy = "endereco")
-    private Construtora construtora;
 
 }

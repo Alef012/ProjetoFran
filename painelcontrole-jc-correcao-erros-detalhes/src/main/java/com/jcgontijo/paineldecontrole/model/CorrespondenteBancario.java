@@ -13,8 +13,5 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CorrespondenteBancario extends PessoaJuridica{
-
-   
-
-    
+        
 }

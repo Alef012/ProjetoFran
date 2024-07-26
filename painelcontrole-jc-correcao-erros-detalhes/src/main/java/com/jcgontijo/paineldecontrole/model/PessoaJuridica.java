@@ -28,5 +28,4 @@ public class PessoaJuridica extends Entidade{
     @Column(name="cnpj")
     private String cnpj;
 
-
 }

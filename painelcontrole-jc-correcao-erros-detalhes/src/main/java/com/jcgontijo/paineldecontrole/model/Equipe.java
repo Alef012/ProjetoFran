@@ -23,4 +23,5 @@ public class Equipe extends Entidade{
     
     @Column(nullable = false, name ="nome")
     private String nome;
+    
 }

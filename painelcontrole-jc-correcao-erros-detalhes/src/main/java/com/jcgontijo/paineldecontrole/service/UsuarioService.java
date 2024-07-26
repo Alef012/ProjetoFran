@@ -53,7 +53,8 @@ public class UsuarioService {
     }
 
     public void excluirPorId(Long id) {
-        usuarioRepository.deleteByIdCustom(id);
+        Usuario usuario = usuarioRepository.findById(id).get();
+        usuarioRepository.delete(usuario);
     }
 
     public Optional<Usuario> encontrarPorEmail(String email) {

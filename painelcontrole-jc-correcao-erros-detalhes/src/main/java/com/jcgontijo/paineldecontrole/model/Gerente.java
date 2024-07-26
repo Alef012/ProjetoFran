@@ -16,5 +16,4 @@ import lombok.ToString;
 @Builder
 public class Gerente extends Pessoa{
 
-   
 }

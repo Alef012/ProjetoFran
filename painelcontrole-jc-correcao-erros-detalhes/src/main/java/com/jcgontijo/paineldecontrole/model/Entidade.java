@@ -16,5 +16,6 @@ public class Entidade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    
 }
  

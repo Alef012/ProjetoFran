@@ -22,7 +22,6 @@ import lombok.ToString;
 @ToString
 public class Endereco extends Entidade{
 
-
     @Column(name = "cep")
     String cep;
 

@@ -2,9 +2,7 @@ package com.ethos.gestorimobiliario;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.ethos.gestorimobiliario.modelos.Perfil;
 import com.ethos.gestorimobiliario.modelos.Usuario;

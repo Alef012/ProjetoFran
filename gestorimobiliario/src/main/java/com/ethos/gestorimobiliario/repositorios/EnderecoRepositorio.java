@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ethos.gestorimobiliario.modelos.Endereco;
 
 @Repository
-public interface EnderecoRepository extends JpaRepository<Endereco,Long>{
+public interface EnderecoRepositorio extends JpaRepository<Endereco,Long>{
     
 }

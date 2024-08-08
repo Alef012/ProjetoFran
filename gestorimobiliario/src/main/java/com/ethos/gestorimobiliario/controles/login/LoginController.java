@@ -1,4 +1,4 @@
-package com.ethos.gestorimobiliario.controles;
+package com.ethos.gestorimobiliario.controles.login;
 
 import java.security.Principal;
 

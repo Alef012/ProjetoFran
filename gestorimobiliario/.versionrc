@@ -1,0 +1,41 @@
+{
+  "header": "# CHANGELOG!",
+  "types": [
+    {
+      "type": "feat",
+      "section": "Features"
+    },
+    {
+      "type": "fix",
+      "section": "Correção de erros"
+    },
+    {
+      "type": "test",
+      "section": "Testes",
+      "hidden": false
+    },
+    {
+      "type": "build",
+      "section": "Build System",
+      "hidden": true
+    },
+    {
+      "type": "perf",
+      "section": "Performance"
+    },
+    {
+      "type": "ci",
+      "section": "CI/CD",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "Documentação"
+    },
+    {
+      "type": "improve",
+      "section": "Melhorias"
+    }
+  ],
+  "releaseCommitMessageFormat": "chore(release): {{currentTag}}\n\nGera nova versão da aplicação"
+}

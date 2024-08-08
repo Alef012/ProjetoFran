@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ethos.gestorimobiliario.modelos.Corretor;
 
 @Repository
-public interface CorretorRepository extends JpaRepository<Corretor,Long>{
+public interface corretorRepositorio extends JpaRepository<Corretor,Long>{
     
 }

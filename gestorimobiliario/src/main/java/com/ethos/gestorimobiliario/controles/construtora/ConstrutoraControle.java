@@ -51,7 +51,6 @@ public class ConstrutoraControle extends ControleAbstrato<Construtora,Long,Const
     @Override
     public ResponseEntity<Construtora> obterPorId(@PathVariable Long id) {
         try {
-            construtoraServico.obterPorId(id);
             return new ResponseEntity<>(this.construtoraServico.obterPorId(id),HttpStatus.OK);
         } catch (EntidadeNaoEncontradaExcecao e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

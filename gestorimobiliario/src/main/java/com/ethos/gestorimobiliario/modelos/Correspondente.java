@@ -5,8 +5,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Builder;
+import org.apache.commons.beanutils.BeanUtils;
+
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -15,11 +17,19 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Builder
-public class Correspondente extends Pessoa{
+@NoArgsConstructor
+public class Correspondente extends Pessoa {
 
     @ManyToOne
     @JoinColumn(name = "correspondente_bancario_id")
     private CorrespondenteBancario correspondenteBancario;
+
+    public void copiarAtributosDe(Pessoa pessoa) {
+        try {
+            BeanUtils.copyProperties(this, pessoa);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

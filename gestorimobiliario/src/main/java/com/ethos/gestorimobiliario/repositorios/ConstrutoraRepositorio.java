@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ethos.gestorimobiliario.modelos.Construtora;
 
 @Repository
-public interface ConstrutoraRepository extends JpaRepository<Construtora,Long>{
+public interface ConstrutoraRepositorio extends JpaRepository<Construtora,Long>{
     
 }

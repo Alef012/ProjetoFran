@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-public abstract class ControleAbstrato<T, K> implements Controle<T, K> {
+public abstract class ControleAbstrato<T, K,A> implements Controle<T, K,A> {
     
     @PostMapping
     @Override
-    public abstract ResponseEntity<T> criar(@RequestBody T entidade);
+    public abstract ResponseEntity<T> criar(@RequestBody A entidade);
 
     @PutMapping("/{id}")
     @Override
-    public abstract ResponseEntity<T> editar(@PathVariable K id, @RequestBody T entidade);
+    public abstract ResponseEntity<T> editar(@PathVariable K id, @RequestBody A entidade);
 
     @DeleteMapping("/{id}")
     @Override

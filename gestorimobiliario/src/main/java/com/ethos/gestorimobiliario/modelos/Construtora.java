@@ -6,6 +6,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,10 +24,6 @@ import lombok.ToString;
 public class Construtora extends PessoaJuridica{
     
     @OneToOne
-    @JoinColumn(name = "endereco_id")
-    private Endereco endereco;
-
-    @OneToOne
     @JoinColumn(name = "gerente_id")
     private Gerente gerente;
 
@@ -33,5 +31,11 @@ public class Construtora extends PessoaJuridica{
     @JoinColumn(name = "financeiro_id")
     private Financeiro financeiro;
 
-    
+    public void copiarAtributosDe(PessoaJuridica pessoaJuridica) {
+        try {
+            BeanUtils.copyProperties(this, pessoaJuridica);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

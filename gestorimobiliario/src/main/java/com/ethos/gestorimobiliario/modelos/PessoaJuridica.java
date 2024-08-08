@@ -2,6 +2,8 @@ package com.ethos.gestorimobiliario.modelos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,5 +29,10 @@ public class PessoaJuridica extends Entidade{
 
     @Column(name="cnpj")
     private String cnpj;
+
+    @OneToOne
+    @JoinColumn(name = "endereco_id")
+    private Endereco endereco;
+
 
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ethos.gestorimobiliario.modelos.Gerente;
 
 @Repository
-public interface GerenteRepository extends JpaRepository<Gerente,Long>{
+public interface GerenteRepositorio extends JpaRepository<Gerente,Long>{
     
 }

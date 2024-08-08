@@ -7,14 +7,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.ethos.gestorimobiliario.excecoes.EntidadeNaoEncontradaException;
+import com.ethos.gestorimobiliario.excecoes.EntidadeNaoEncontradaExcecao;
 import com.ethos.gestorimobiliario.modelos.Cliente;
 import com.ethos.gestorimobiliario.repositorios.ClienteRepositorio;
 import com.ethos.gestorimobiliario.repositorios.EnderecoRepositorio;
 import com.ethos.gestorimobiliario.servicos.Servico;
 
 @Service
-public class ClienteServico implements Servico<Cliente,Long> {
+public class ClienteServico implements Servico<Cliente,Long,Cliente> {
 
     @Autowired
     private ClienteRepositorio clienteRepositorio;
@@ -32,7 +32,7 @@ public class ClienteServico implements Servico<Cliente,Long> {
     }
 
     @Override
-    public Cliente obterPorId(Long id) throws EntidadeNaoEncontradaException {
+    public Cliente obterPorId(Long id) throws EntidadeNaoEncontradaExcecao {
        this.verificarExistenciaPorId(id);
        return this.clienteRepositorio.findById(id).get();
     }
@@ -48,21 +48,21 @@ public class ClienteServico implements Servico<Cliente,Long> {
     }
 
     @Override
-    public Cliente atualizar(Long id, Cliente clienteAtualizado) throws EntidadeNaoEncontradaException {
+    public Cliente atualizar(Long id, Cliente clienteAtualizado) throws EntidadeNaoEncontradaExcecao {
         verificarExistenciaPorId(id);
         clienteAtualizado.setId(id);
         return this.criar(clienteAtualizado);
     }
 
     @Override
-    public void deletar(Long id) throws EntidadeNaoEncontradaException {
+    public void deletar(Long id) throws EntidadeNaoEncontradaExcecao {
         verificarExistenciaPorId(id);
         this.clienteRepositorio.deleteById(id);
     }
 
-    private void verificarExistenciaPorId(Long id) throws EntidadeNaoEncontradaException {
+    private void verificarExistenciaPorId(Long id) throws EntidadeNaoEncontradaExcecao {
         if (!clienteRepositorio.existsById(id)) {
-            throw new EntidadeNaoEncontradaException("Cliente não encontrado com id: " + id);
+            throw new EntidadeNaoEncontradaExcecao("Cliente não encontrado com id: " + id);
         }
     }
     

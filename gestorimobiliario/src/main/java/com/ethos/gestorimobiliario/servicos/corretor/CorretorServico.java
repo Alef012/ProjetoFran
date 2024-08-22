@@ -62,7 +62,7 @@ public class CorretorServico implements Servico<Corretor,Long,Corretor>{
 
     private void verificarExistenciaPorId(Long id) throws EntidadeNaoEncontradaExcecao {
         if (!corretorRepositorio.existsById(id)) {
-            throw new EntidadeNaoEncontradaExcecao("Financeiro não encontrado com id: " + id);
+            throw new EntidadeNaoEncontradaExcecao("Corretor não encontrado com id: " + id);
         }
     }
     

@@ -52,7 +52,7 @@ public class CorretorControle extends ControleAbstrato<Corretor,Long,Corretor>{
     @Override
     public ResponseEntity<Corretor> obterPorId(@PathVariable Long id) {
         try{
-            return new ResponseEntity<>(this.corretorServico.obterPorId(id),HttpStatus.OK);
+            return new ResponseEntity<Corretor>(this.corretorServico.obterPorId(id),HttpStatus.OK);
         }catch(EntidadeNaoEncontradaExcecao e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -60,7 +60,7 @@ public class CorretorControle extends ControleAbstrato<Corretor,Long,Corretor>{
 
     @Override
     public ResponseEntity<Page<Corretor>> listarPaginado(Pageable pageable) {
-        return new ResponseEntity<>(this.corretorServico.listarPaginado(pageable),HttpStatus.OK);
+        return new ResponseEntity<Page<Corretor>>(this.corretorServico.listarPaginado(pageable),HttpStatus.OK);
     }
     
 }

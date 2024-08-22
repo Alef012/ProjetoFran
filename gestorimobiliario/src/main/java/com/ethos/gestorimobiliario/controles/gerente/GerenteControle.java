@@ -23,7 +23,7 @@ public class GerenteControle extends ControleAbstrato<Gerente,Long,Gerente>{
 
     @Override
     public ResponseEntity<Gerente> criar(@RequestBody Gerente gerente) {
-        return new ResponseEntity<>(gerenteServico.criar(gerente),HttpStatus.CREATED);
+        return new ResponseEntity<Gerente>(gerenteServico.criar(gerente),HttpStatus.CREATED);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class GerenteControle extends ControleAbstrato<Gerente,Long,Gerente>{
 
     @Override
     public ResponseEntity<Page<Gerente>> listarPaginado(Pageable pageable) {
-        return new ResponseEntity<>(this.gerenteServico.listarPaginado(pageable),HttpStatus.OK);
+        return new ResponseEntity<Page<Gerente>>(this.gerenteServico.listarPaginado(pageable),HttpStatus.OK);
     }
     
 }

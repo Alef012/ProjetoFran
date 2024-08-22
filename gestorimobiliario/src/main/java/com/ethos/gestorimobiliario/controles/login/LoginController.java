@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ethos.gestorimobiliario.modelos.Usuario;
-import com.ethos.gestorimobiliario.repositorios.UsuarioRepository;
+import com.ethos.gestorimobiliario.repositorios.UsuarioRepositorio;
 import com.ethos.gestorimobiliario.servicos.UsuarioService;
 import com.ethos.gestorimobiliario.util.AlterarSenha;
 import com.ethos.gestorimobiliario.util.SenhaUtils;
@@ -18,7 +18,7 @@ import com.ethos.gestorimobiliario.util.SenhaUtils;
 public class LoginController {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioRepositorio usuarioRepository;
 
     @Autowired
     private UsuarioService usuarioService;

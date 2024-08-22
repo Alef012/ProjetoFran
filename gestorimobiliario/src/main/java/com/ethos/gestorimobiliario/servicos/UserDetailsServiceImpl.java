@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 import com.ethos.gestorimobiliario.modelos.UserDetailsImpl;
 import com.ethos.gestorimobiliario.modelos.Usuario;
-import com.ethos.gestorimobiliario.repositorios.UsuarioRepository;
+import com.ethos.gestorimobiliario.repositorios.UsuarioRepositorio;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioRepositorio usuarioRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

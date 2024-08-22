@@ -52,7 +52,7 @@ public class CorrespondenteControle extends ControleAbstrato<Correspondente,Long
     @Override
     public ResponseEntity<Correspondente> obterPorId(@PathVariable Long id) {
         try{
-            return new ResponseEntity<>(this.correspondenteServico.obterPorId(id),HttpStatus.OK);
+            return new ResponseEntity<Correspondente>(this.correspondenteServico.obterPorId(id),HttpStatus.OK);
         }catch(EntidadeNaoEncontradaExcecao e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -60,7 +60,7 @@ public class CorrespondenteControle extends ControleAbstrato<Correspondente,Long
 
     @Override
     public ResponseEntity<Page<Correspondente>> listarPaginado(Pageable pageable) {
-        return new ResponseEntity<>(this.correspondenteServico.listarPaginado(pageable),HttpStatus.OK);
+        return new ResponseEntity<Page<Correspondente>>(this.correspondenteServico.listarPaginado(pageable),HttpStatus.OK);
     }
     
 }

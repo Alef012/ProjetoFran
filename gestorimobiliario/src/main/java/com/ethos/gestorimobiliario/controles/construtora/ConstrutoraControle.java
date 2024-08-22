@@ -51,7 +51,7 @@ public class ConstrutoraControle extends ControleAbstrato<Construtora,Long,Const
     @Override
     public ResponseEntity<Construtora> obterPorId(@PathVariable Long id) {
         try {
-            return new ResponseEntity<>(this.construtoraServico.obterPorId(id),HttpStatus.OK);
+            return new ResponseEntity<Construtora>(this.construtoraServico.obterPorId(id),HttpStatus.OK);
         } catch (EntidadeNaoEncontradaExcecao e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -59,7 +59,7 @@ public class ConstrutoraControle extends ControleAbstrato<Construtora,Long,Const
 
     @Override
     public ResponseEntity<Page<Construtora>> listarPaginado(Pageable pageable) {
-        return new ResponseEntity<>(this.construtoraServico.listarPaginado(pageable),HttpStatus.OK);
+        return new ResponseEntity<Page<Construtora>>(this.construtoraServico.listarPaginado(pageable),HttpStatus.OK);
     }
 
     

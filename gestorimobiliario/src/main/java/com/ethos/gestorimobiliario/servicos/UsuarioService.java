@@ -9,7 +9,7 @@ import java.util.Optional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ethos.gestorimobiliario.modelos.Usuario;
-import com.ethos.gestorimobiliario.repositorios.UsuarioRepository;
+import com.ethos.gestorimobiliario.repositorios.UsuarioRepositorio;
 import com.ethos.gestorimobiliario.util.SenhaUtils;
 
 import java.nio.file.Path;
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Service;
 public class UsuarioService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioRepositorio usuarioRepository;
 
     @Value("${diretorio.usuarios}")
     private String diretorio;

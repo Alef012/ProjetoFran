@@ -48,7 +48,7 @@ public class CorrespondenteBancarioControle extends ControleAbstrato<Corresponde
     @Override
     public ResponseEntity<CorrespondenteBancario> obterPorId(Long id) {
         try {
-            return new ResponseEntity<>(this.correspondenteBancarioServico.obterPorId(id),HttpStatus.OK);
+            return new ResponseEntity<CorrespondenteBancario>(this.correspondenteBancarioServico.obterPorId(id),HttpStatus.OK);
         } catch (EntidadeNaoEncontradaExcecao e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -56,7 +56,7 @@ public class CorrespondenteBancarioControle extends ControleAbstrato<Corresponde
 
     @Override
     public ResponseEntity<Page<CorrespondenteBancario>> listarPaginado(Pageable pageable) {
-        return new ResponseEntity<>(this.correspondenteBancarioServico.listarPaginado(pageable),HttpStatus.OK);
+        return new ResponseEntity<Page<CorrespondenteBancario>>(this.correspondenteBancarioServico.listarPaginado(pageable),HttpStatus.OK);
     }
     
 }

@@ -56,6 +56,6 @@ public class ClienteControle extends ControleAbstrato<Cliente, Long,Cliente> {
 
     @Override
     public ResponseEntity<Page<Cliente>> listarPaginado(Pageable pageable) {
-        return new ResponseEntity<>(this.clienteServico.listarPaginado(pageable), HttpStatus.OK);
+        return new ResponseEntity<Page<Cliente>>(this.clienteServico.listarPaginado(pageable), HttpStatus.OK);
     }
 }

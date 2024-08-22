@@ -60,7 +60,7 @@ public class FinanceiroControle extends ControleAbstrato<Financeiro,Long,Finance
 
     @Override
     public ResponseEntity<Page<Financeiro>> listarPaginado(Pageable pageable) {
-        return new ResponseEntity<>(this.financeiroServico.listarPaginado(pageable),HttpStatus.OK);
+        return new ResponseEntity<Page<Financeiro>>(this.financeiroServico.listarPaginado(pageable),HttpStatus.OK);
     }
 
 

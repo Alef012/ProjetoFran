@@ -40,6 +40,6 @@ public class Proposta extends Entidade{
 
     @OneToOne
     @JoinColumn(name="correspondente_bancario_id")
-    private CorrespondenteBancario correspondente;
+    private CorrespondenteBancario correspondenteBancario;
     
 }

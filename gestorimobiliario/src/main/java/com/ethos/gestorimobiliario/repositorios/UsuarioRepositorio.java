@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.ethos.gestorimobiliario.modelos.Usuario;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario,Long>{
+public interface UsuarioRepositorio extends JpaRepository<Usuario,Long>{
     
     List<Usuario> findByPerfil(String perfil);
 
